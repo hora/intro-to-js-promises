@@ -3,8 +3,8 @@
 
 - JSON is short for JavaScript Object Notation
 
-- JSON is a way of transforming JavaScript objects into strings so that their
-  data can be shared between computers
+- JSON is a way of transforming JavaScript data (like objects) into strings so
+  that their data can be shared between computers
 
     - It will look a lot like a regular object, but keep in mind that they are
       _strings_

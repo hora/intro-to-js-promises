@@ -19,5 +19,5 @@
   to their data to other computer programs (sometimes for free, other times for
   a fee)
 
-    - ex: [Dark Sky Weather API](https://darksky.net/poweredby/)
+    - ex: (Dark Sky Weather API)[https://darksky.net/poweredby/]
 

@@ -96,7 +96,7 @@ const writers = ['Toni', 'James', 'Waldo', 'Zora'];
 const lookForWaldo = function(people, cb) {
     people.forEach(function(person, index) {
         if (person === 'Waldo') {
-            return index;
+            cb(index);
         }
     });
 }
@@ -105,7 +105,12 @@ const foundWaldo = function(index) {
     console.log(`Found Waldo at index ${index}`);
 };
 
+const foundWaldoAgain = function(index) {
+    console.log(`We found Waldo again, this time at index ${index}`);
+};
+
 lookForWaldo(writers, foundWaldo);
+lookForWaldo(writers, foundWaldoAgain);
 
 // What will be printed to the console?
 //

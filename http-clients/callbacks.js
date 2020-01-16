@@ -1,10 +1,17 @@
 const request = require('request');
 
-let techWorkerActions = [];
+// What we want:
+// fetch the worker actions data form the api
+// go through all of that data and count how many workers were involved in
+// actions from 1979 - 2019
 
-request('http://localhost:3001/pre-2000s', function(error, response, body) {
+request('http://localhost:3001/pre-2000s', function(error, response, body){
+
+    let techWorkerActions = [];
+
     if (error) {
-        console.log('There was an error making the request');
+        console.log('Request: GET http://localhost:3001/pre-2000s');
+        console.log('There was an error making the request.');
         return;
     }
 
@@ -14,44 +21,46 @@ request('http://localhost:3001/pre-2000s', function(error, response, body) {
         techWorkerActions.push(action);
     }
 
-    request('http://localhost:3001/2000s', function(error, response, body) {
+    request('http://localhost:3001/2000s', function(error, response, body){
+
         if (error) {
-            console.log('There was an error making the request');
+            console.log('There was an error making the request.');
             return;
         }
 
-        let actions2000s = JSON.parse(body);
+        let actions2000 = JSON.parse(body);
 
-        for (let action of actions2000s) {
+        for (let action of actions2000) {
             techWorkerActions.push(action);
         }
 
-        request('http://localhost:3001/2010s', function(error, response, body) {
+        request('http://localhost:3001/2010s', function(error, response, body){
+
             if (error) {
-                console.log('There was an error making the request');
+                console.log('There was an error making the request.');
                 return;
             }
 
-            let actions2010s = JSON.parse(body);
+            let actions2010 = JSON.parse(body);
 
-            for (let action of actions2010s) {
+            for (let action of actions2010) {
                 techWorkerActions.push(action);
             }
 
-            // Only now would we be ready to work with the complete dataset
             let totalWorkers = 0;
 
             for (let action of techWorkerActions) {
-                let workers = Number(action.workers);
+                let workerNum = Number(action.workers);
 
-                if(!isNaN(workers)) {
-                    totalWorkers += workers;
+
+                if (!isNaN(workerNum)) {
+                    totalWorkers += workerNum;
                 }
             }
 
-            console.log(`Approximately ${totalWorkers} tech workers were involved in collective actions since 1979. Note: some workers may have been counted more than once.`);
+            console.log(`Approx. ${totalWorkers} were involved in actions between 1979 and 2019.`);
         });
-
     });
 });
+
 
