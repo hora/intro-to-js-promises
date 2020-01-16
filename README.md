@@ -6,6 +6,8 @@ interest us pertaining to that data. We're going to see two approaches for
 making HTTP requests: one using the 'callback waterfall' method, and another
 using promises.
 
+## [Code examples from lecture are below](#examples)
+
 ## Review
 
 ### Sync vs async code
@@ -69,16 +71,14 @@ How do we know a GET request was made successfully?
   to their data to other computer programs (sometimes for free, other times for
   a fee)
 
-    - ex: (Dark Sky Weather API)[https://darksky.net/poweredby/]
-
 ## A simple HTTP API
 
 For demo purposes, I built a simple HTTP API that returns JSON data about tech
 worker actions. The complete data can be found here: https://collectiveactions.tech/
 
 You can run the server for this API by cloning this repo, changing directory
-into the [`lesson-planning/csv-to-json/`]() directory, and then running the command
-`node app.js`
+into the [`lesson-planning/csv-to-json/`](/lesson-planning/csv-to-json/)
+directory, and then running the command `node app.js`
 
 ### Routes
 
@@ -162,7 +162,7 @@ asyncOperationReturningAPromise()
 
 ## Examples
 
-For the two examples we built in class, see the (`http-clients`)[/http-clients]
+For the two examples we built in class, see the [`http-clients`](/http-clients)
 directory. The callback approach is in
 [`callbacks.js`](/http-clients/callbacks.js) and the promises approach in
 [`promises.js`](/http-clients/promises.js)
