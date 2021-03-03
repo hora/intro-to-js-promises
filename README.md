@@ -17,8 +17,6 @@ What is synchronous code?
 
 What is asynchronous code?
 
-## Review
-
 ### HTTP
 
 What is HTTP?
